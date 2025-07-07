@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automation Frameworks Hub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #ffffff;
+            color: #363D58;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 40px 0;
+            background: linear-gradient(135deg, rgba(235, 91, 91, 0.1) 0%, rgba(54, 61, 88, 0.1) 100%);
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(54, 61, 88, 0.1);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #EB5B5B, #ff7e7e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .frameworks-section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #EB5B5B;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .table-container {
+            background: rgba(54, 61, 88, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 15px 35px rgba(54, 61, 88, 0.1);
+            overflow-x: auto;
+        }
+
+        .frameworks-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .frameworks-table th {
+            background: linear-gradient(135deg, #EB5B5B, #d64545);
+            color: white;
+            padding: 20px 15px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border-bottom: 2px solid rgba(54, 61, 88, 0.1);
+        }
+
+        .frameworks-table td {
+            padding: 20px 15px;
+            border-bottom: 1px solid rgba(54, 61, 88, 0.1);
+            color: #363D58;
+        }
+
+        .frameworks-table tr:hover {
+            background: rgba(235, 91, 91, 0.1);
+            transform: scale(1.02);
+            transition: all 0.3s ease;
+        }
+
+        .framework-name {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #EB5B5B;
+        }
+
+        .context-badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin: 2px;
+        }
+
+        .web { background: #4CAF50; color: white; }
+        .mobile { background: #2196F3; color: white; }
+        .hybrid { background: #FF9800; color: white; }
+
+        .repo-link {
+            display: inline-block;
+            padding: 8px 16px;
+            background: linear-gradient(135deg, #363D58, #2A2F47);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .repo-link:hover {
+            border-color: #EB5B5B;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(235, 91, 91, 0.3);
+        }
+
+        .contact-section {
+            background: rgba(54, 61, 88, 0.05);
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 15px 35px rgba(54, 61, 88, 0.1);
+        }
+
+        .contact-section h2 {
+            color: #EB5B5B;
+            margin-bottom: 20px;
+            font-size: 2.2rem;
+        }
+
+        .contact-info {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: #666;
+        }
+
+        .contact-email {
+            color: #EB5B5B;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        .contact-email:hover {
+            color: #ff7e7e;
+            text-decoration: underline;
+        }
+
+        .version-badge {
+            background: linear-gradient(135deg, #363D58, #2A2F47);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .last-updated {
+            font-size: 0.9rem;
+            color: #888;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .table-container {
+                padding: 15px;
+            }
+            
+            .frameworks-table th,
+            .frameworks-table td {
+                padding: 12px 8px;
+                font-size: 0.9rem;
+            }
+            
+            .contact-section {
+                padding: 25px;
+            }
+        }
+
+        .floating-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(235, 91, 91, 0.3);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-particles">
+        <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 20%; animation-delay: 1s;"></div>
+        <div class="particle" style="left: 30%; animation-delay: 2s;"></div>
+        <div class="particle" style="left: 40%; animation-delay: 3s;"></div>
+        <div class="particle" style="left: 50%; animation-delay: 4s;"></div>
+        <div class="particle" style="left: 60%; animation-delay: 5s;"></div>
+        <div class="particle" style="left: 70%; animation-delay: 0.5s;"></div>
+        <div class="particle" style="left: 80%; animation-delay: 1.5s;"></div>
+        <div class="particle" style="left: 90%; animation-delay: 2.5s;"></div>
+    </div>
+
+    <div class="container">
+        <header class="hero">
+            <h1>Automation Frameworks Hub</h1>
+            <p>Explora nuestro inventario completo de herramientas de automatización y encuentra la solución perfecta para tu proyecto</p>
+        </header>
+
+        <section class="frameworks-section">
+            <h2 class="section-title">Frameworks Disponibles</h2>
+            <div class="table-container">
+                <table class="frameworks-table">
+                    <thead>
+                        <tr>
+                            <th>Framework</th>
+                            <th>Descripción</th>
+                            <th>Contexto</th>
+                            <th>Versión</th>
+                            <th>Última Actualización</th>
+                            <th>Repositorio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="framework-name">Playwright</td>
+                            <td>Framework moderno para automatización de pruebas end-to-end en aplicaciones web. Soporte multiplataforma con alta velocidad y confiabilidad.</td>
+                            <td>
+                                <span class="context-badge web">Web</span>
+                                <span class="context-badge mobile">Mobile</span>
+                            </td>
+                            <td><span class="version-badge">v1.40.1</span></td>
+                            <td class="last-updated">15 de Enero, 2025</td>
+                            <td><a href="https://gitlab.company.com/automation/playwright-framework" class="repo-link">Ver Repositorio</a></td>
+                        </tr>
+                        <tr>
+                            <td class="framework-name">Karate</td>
+                            <td>Framework completo para pruebas de APIs y servicios web. Sintaxis simple basada en Gherkin con capacidades avanzadas de testing.</td>
+                            <td><span class="context-badge web">Web</span></td>
+                            <td><span class="version-badge">v1.4.1</span></td>
+                            <td class="last-updated">08 de Enero, 2025</td>
+                            <td><a href="https://gitlab.company.com/automation/karate-framework" class="repo-link">Ver Repositorio</a></td>
+                        </tr>
+                        <tr>
+                            <td class="framework-name">Cypress</td>
+                            <td>Herramienta de testing end-to-end para aplicaciones web modernas. Ejecución en tiempo real con debugging avanzado.</td>
+                            <td><span class="context-badge web">Web</span></td>
+                            <td><span class="version-badge">v13.6.2</span></td>
+                            <td class="last-updated">22 de Enero, 2025</td>
+                            <td><a href="https://gitlab.company.com/automation/cypress-framework" class="repo-link">Ver Repositorio</a></td>
+                        </tr>
+                        <tr>
+                            <td class="framework-name">Selenium</td>
+                            <td>Framework robusto y veterano para automatización de navegadores web. Amplio ecosistema con soporte para múltiples lenguajes.</td>
+                            <td><span class="context-badge web">Web</span></td>
+                            <td><span class="version-badge">v4.16.1</span></td>
+                            <td class="last-updated">12 de Enero, 2025</td>
+                            <td><a href="https://gitlab.company.com/automation/selenium-framework" class="repo-link">Ver Repositorio</a></td>
+                        </tr>
+                        <tr>
+                            <td class="framework-name">Appium</td>
+                            <td>Plataforma de automatización móvil multiplataforma. Soporte nativo para iOS y Android con capacidades híbridas.</td>
+                            <td>
+                                <span class="context-badge mobile">Mobile</span>
+                                <span class="context-badge hybrid">Híbrido</span>
+                            </td>
+                            <td><span class="version-badge">v2.2.3</span></td>
+                            <td class="last-updated">28 de Enero, 2025</td>
+                            <td><a href="https://gitlab.company.com/automation/appium-framework" class="repo-link">Ver Repositorio</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <h2>Contacto y Soporte</h2>
+            <div class="contact-info">
+                <p>¿Tienes alguna observación, comentario o necesitas ayuda con algún framework?</p>
+                <p>No dudes en contactarnos:</p>
+            </div>
+            <a href="mailto:automation-support@company.com" class="contact-email">esantamaria@izertis.com</a>
+            <div class="contact-info" style="margin-top: 20px;">
+                <p>Nuestro equipo de soporte estará encantado de ayudarte con cualquier consulta técnica o sugerencia de mejora.</p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Agregar interactividad a la tabla
+        document.querySelectorAll('.frameworks-table tr').forEach(row => {
+            row.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.02)';
+                this.style.boxShadow = '0 5px 15px rgba(235, 91, 91, 0.2)';
+            });
+            
+            row.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+                this.style.boxShadow = 'none';
+            });
+        });
+
+        // Animación de partículas flotantes
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 6 + 's';
+            document.querySelector('.floating-particles').appendChild(particle);
+            
+            setTimeout(() => {
+                particle.remove();
+            }, 6000);
+        }
+
+        // Crear partículas periódicamente
+        setInterval(createParticle, 2000);
+    </script>
+</body>
+</html>
