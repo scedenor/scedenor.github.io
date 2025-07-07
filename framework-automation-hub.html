@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Automation Frameworks Hub</title>
+    <title>Automation Frameworks Hub - By Izertis</title>
     <style>
         * {
             margin: 0;
@@ -14,9 +14,105 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: #ffffff;
-            color: #363D58;
+            color: #011C4A;
             line-height: 1.6;
             min-height: 100vh;
+        }
+
+        /* Header Styles - Izertis Design */
+        .izertis-header {
+            background: #fff;
+            border-bottom: 1px solid #e5e5e5;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+        }
+
+        .izertis-logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-text {
+            font-size: 28px;
+            font-weight: bold;
+            color: #011C4A;
+            letter-spacing: -1px;
+        }
+
+        .main-nav {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: #011C4A;
+            font-weight: 500;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .main-nav a:hover {
+            background: #FF5361;
+            color: white;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .contact-btn {
+            background: #FF5361;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            background: #d64545;
+            transform: translateY(-2px);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: #011C4A;
+            transition: 0.3s;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 70px;
+            padding-top: 40px;
         }
 
         .container {
@@ -37,7 +133,7 @@
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 20px;
-            background: linear-gradient(45deg, #EB5B5B, #ff7e7e);
+            background: linear-gradient(45deg, #011C4A, #011C4A);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -59,7 +155,7 @@
             font-size: 2.5rem;
             text-align: center;
             margin-bottom: 30px;
-            color: #EB5B5B;
+            color: #FF5361;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
@@ -81,7 +177,7 @@
         }
 
         .frameworks-table th {
-            background: linear-gradient(135deg, #EB5B5B, #d64545);
+            background: linear-gradient(135deg, #FF5361, #d64545);
             color: white;
             padding: 20px 15px;
             text-align: left;
@@ -93,7 +189,7 @@
         .frameworks-table td {
             padding: 20px 15px;
             border-bottom: 1px solid rgba(54, 61, 88, 0.1);
-            color: #363D58;
+            color: #011C4A;
         }
 
         .frameworks-table tr:hover {
@@ -105,7 +201,7 @@
         .framework-name {
             font-weight: bold;
             font-size: 1.2rem;
-            color: #EB5B5B;
+            color: #FF5361;
         }
 
         .context-badge {
@@ -124,7 +220,7 @@
         .repo-link {
             display: inline-block;
             padding: 8px 16px;
-            background: linear-gradient(135deg, #363D58, #2A2F47);
+            background: linear-gradient(135deg, #011C4A, #2A2F47);
             color: white;
             text-decoration: none;
             border-radius: 25px;
@@ -134,7 +230,7 @@
         }
 
         .repo-link:hover {
-            border-color: #EB5B5B;
+            border-color: #FF5361;
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(235, 91, 91, 0.3);
         }
@@ -146,10 +242,11 @@
             text-align: center;
             backdrop-filter: blur(10px);
             box-shadow: 0 15px 35px rgba(54, 61, 88, 0.1);
+            margin-bottom: 50px;
         }
 
         .contact-section h2 {
-            color: #EB5B5B;
+            color: #FF5361;
             margin-bottom: 20px;
             font-size: 2.2rem;
         }
@@ -161,7 +258,7 @@
         }
 
         .contact-email {
-            color: #EB5B5B;
+            color: #FF5361;
             font-weight: bold;
             text-decoration: none;
             font-size: 1.2rem;
@@ -173,7 +270,7 @@
         }
 
         .version-badge {
-            background: linear-gradient(135deg, #363D58, #2A2F47);
+            background: linear-gradient(135deg, #011C4A, #2A2F47);
             color: white;
             padding: 4px 10px;
             border-radius: 15px;
@@ -187,24 +284,111 @@
             font-style: italic;
         }
 
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .table-container {
-                padding: 15px;
-            }
-            
-            .frameworks-table th,
-            .frameworks-table td {
-                padding: 12px 8px;
-                font-size: 0.9rem;
-            }
-            
-            .contact-section {
-                padding: 25px;
-            }
+        /* Footer Styles - Izertis Design */
+        .izertis-footer {
+            background: #011C4A;
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            color: #FF5361;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 12px;
+        }
+
+        .footer-section a {
+            color: #e0e0e0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #FF5361;
+        }
+
+        .footer-logo {
+            margin-bottom: 20px;
+        }
+
+        .footer-logo .logo-text {
+            color: white;
+            font-size: 24px;
+        }
+
+        .footer-description {
+            color: #b0b0b0;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(235, 91, 91, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #FF5361;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: #FF5361;
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 30px;
+        }
+
+        .footer-legal a {
+            color: #b0b0b0;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .footer-legal a:hover {
+            color: #FF5361;
         }
 
         .floating-particles {
@@ -230,6 +414,51 @@
             0%, 100% { transform: translateY(0px) rotate(0deg); }
             50% { transform: translateY(-20px) rotate(180deg); }
         }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-nav {
+                display: none;
+            }
+            
+            .mobile-menu-toggle {
+                display: flex;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .table-container {
+                padding: 15px;
+            }
+            
+            .frameworks-table th,
+            .frameworks-table td {
+                padding: 12px 8px;
+                font-size: 0.9rem;
+            }
+            
+            .contact-section {
+                padding: 25px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -245,90 +474,141 @@
         <div class="particle" style="left: 90%; animation-delay: 2.5s;"></div>
     </div>
 
-    <div class="container">
-        <header class="hero">
-            <h1>Automation Frameworks Hub</h1>
-            <p>Explora nuestro inventario completo de herramientas de automatización y encuentra la solución perfecta para tu proyecto</p>
-        </header>
+    <!-- Izertis Header -->
+    <header class="izertis-header">
+        <div class="header-container">
+            <a href="https://www.izertis.com/es/" class="izertis-logo">
+                <span class="logo-text">izertis</span>
+            </a>
+            
+            <nav class="header-nav">
+                <ul class="main-nav">
+                    <li><a href="https://www.izertis.com/es/">Frameworks</a></li>
+                    <li><a href="https://www.izertis.com/es">Automatización & IA</a></li>
+                    <li><a href="https://www.izertis.com/es">Herramientas</a></li>
+                    <li><a href="https://www.izertis.com/es">Formación QA</a></li>
+                    <li><a href="https://www.izertis.com/es">Casos de éxito</a></li>
+                </ul>
+            </nav>
 
-        <section class="frameworks-section">
-            <h2 class="section-title">Frameworks Disponibles</h2>
-            <div class="table-container">
-                <table class="frameworks-table">
-                    <thead>
-                        <tr>
-                            <th>Framework</th>
-                            <th>Descripción</th>
-                            <th>Contexto</th>
-                            <th>Versión</th>
-                            <th>Última Actualización</th>
-                            <th>Repositorio</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="framework-name">Playwright</td>
-                            <td>Framework moderno para automatización de pruebas end-to-end en aplicaciones web. Soporte multiplataforma con alta velocidad y confiabilidad.</td>
-                            <td>
-                                <span class="context-badge web">Web</span>
-                                <span class="context-badge mobile">Mobile</span>
-                            </td>
-                            <td><span class="version-badge">v1.40.1</span></td>
-                            <td class="last-updated">15 de Enero, 2025</td>
-                            <td><a href="https://github.com/ortoniKC/Playwright_Cucumber_TS" class="repo-link">Ver Repositorio</a></td>
-                        </tr>
-                        <tr>
-                            <td class="framework-name">Karate</td>
-                            <td>Framework completo para pruebas de APIs y servicios web. Sintaxis simple basada en Gherkin con capacidades avanzadas de testing.</td>
-                            <td><span class="context-badge web">Web</span></td>
-                            <td><span class="version-badge">v1.4.1</span></td>
-                            <td class="last-updated">08 de Enero, 2025</td>
-                            <td><a href="https://git.izertis.com/globetesting/team-automation/tools/auto-karate-fw" class="repo-link">Ver Repositorio</a></td>
-                        </tr>
-                        <tr>
-                            <td class="framework-name">Cypress</td>
-                            <td>Herramienta de testing end-to-end para aplicaciones web modernas. Ejecución en tiempo real con debugging avanzado.</td>
-                            <td><span class="context-badge web">Web</span></td>
-                            <td><span class="version-badge">v13.6.2</span></td>
-                            <td class="last-updated">22 de Enero, 2025</td>
-                            <td><a href="https://git.izertis.com/globetesting/automation/cypress-framework" class="repo-link">Ver Repositorio</a></td>
-                        </tr>
-                        <tr>
-                            <td class="framework-name">Selenium</td>
-                            <td>Framework robusto y veterano para automatización de navegadores web. Amplio ecosistema con soporte para múltiples lenguajes.</td>
-                            <td><span class="context-badge web">Web</span></td>
-                            <td><span class="version-badge">v4.16.1</span></td>
-                            <td class="last-updated">12 de Enero, 2025</td>
-                            <td><a href="https://git.izertis.com/globetesting/automation/selenium-framework" class="repo-link">Ver Repositorio</a></td>
-                        </tr>
-                        <tr>
-                            <td class="framework-name">Appium</td>
-                            <td>Plataforma de automatización móvil multiplataforma. Soporte nativo para iOS y Android con capacidades híbridas.</td>
-                            <td>
-                                <span class="context-badge mobile">Mobile</span>
-                                <span class="context-badge hybrid">Híbrido</span>
-                            </td>
-                            <td><span class="version-badge">v2.2.3</span></td>
-                            <td class="last-updated">28 de Enero, 2025</td>
-                            <td><a href="https://git.izertis.com/globetesting/automation/appium-framework" class="repo-link">Ver Repositorio</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
+        </div>
+    </header>
 
-        <section class="contact-section">
-            <h2>Contacto y Soporte</h2>
-            <div class="contact-info">
-                <p>¿Tienes alguna observación, comentario o necesitas ayuda con algún framework?</p>
-                <p>No dudes en contactarnos:</p>
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <section class="hero">
+                <h1>Automation Frameworks Hub</h1>
+                <p>Explora nuestro inventario de herramientas de automatización</p>
+            </section>
+
+            <section class="frameworks-section">
+                <h2 class="section-title">Frameworks Disponibles</h2>
+                <div class="table-container">
+                    <table class="frameworks-table">
+                        <thead>
+                            <tr>
+                                <th>Framework</th>
+                                <th>Descripción</th>
+                                <th>Contexto</th>
+                                <th>Versión</th>
+                                <th>Última Actualización</th>
+                                <th>Repositorio</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="framework-name">Playwright (Basic)</td>
+                                <td>Framework moderno para automatización de pruebas end-to-end en aplicaciones web (Básico). Soporte multiplataforma con alta velocidad y confiabilidad.</td>
+                                <td>
+                                    <span class="context-badge web">Web</span>
+                                    <span class="context-badge mobile">Mobile</span>
+                                </td>
+                                <td><span class="version-badge">v1.40.1</span></td>
+                                <td class="last-updated">15 de Enero, 2025</td>
+                                <td><a href="https://github.com/QAlified/automation-framework-playwright" class="repo-link">Ver Repositorio</a></td>
+                            </tr>
+                            <tr>
+                                <td class="framework-name">Playwright (Pro)</td>
+                                <td>Framework moderno para automatización de pruebas end-to-end en aplicaciones web (Pro). Soporte multiplataforma con alta velocidad y confiabilidad.</td>
+                                <td>
+                                    <span class="context-badge web">Web</span>
+                                    <span class="context-badge mobile">Mobile</span>
+                                </td>
+                                <td><span class="version-badge">v1.40.1</span></td>
+                                <td class="last-updated">15 de Enero, 2025</td>
+                                <td><a href="https://github.com/ortoniKC/Playwright_Cucumber_TS" class="repo-link">Ver Repositorio</a></td>
+                            </tr>
+                            <tr>
+                                <td class="framework-name">Karate DSL</td>
+                                <td>Framework completo para pruebas de APIs y servicios web. Sintaxis simple basada en Gherkin con capacidades avanzadas de testing.</td>
+                                <td><span class="context-badge web">Web</span></td>
+                                <td><span class="version-badge">v1.4.1</span></td>
+                                <td class="last-updated">08 de Enero, 2025</td>
+                                <td><a href="https://git.izertis.com/globetesting/team-automation/tools/auto-karate-fw" class="repo-link">Ver Repositorio</a></td>
+                            <tr>
+                                <td class="framework-name">Cypress</td>
+                                <td>Herramienta de testing end-to-end para aplicaciones web modernas. Ejecución en tiempo real con debugging avanzado.</td>
+                                <td><span class="context-badge web">Web</span></td>
+                                <td><span class="version-badge">v13.6.2</span></td>
+                                <td class="last-updated">22 de Enero, 2025</td>
+                                <td><a href="https://git.izertis.com/globetesting/automation/cypress-framework" class="repo-link">Ver Repositorio</a></td>
+                            </tr>
+                            <tr>
+                                <td class="framework-name">Selenium</td>
+                                <td>Framework robusto y veterano para automatización de navegadores web. Amplio ecosistema con soporte para múltiples lenguajes.</td>
+                                <td><span class="context-badge web">Web</span></td>
+                                <td><span class="version-badge">v4.16.1</span></td>
+                                <td class="last-updated">12 de Enero, 2025</td>
+                                <td><a href="https://git.izertis.com/globetesting/automation/selenium-framework" class="repo-link">Ver Repositorio</a></td>
+                            </tr>
+                            <tr>
+                                <td class="framework-name">Appium</td>
+                                <td>Plataforma de automatización móvil multiplataforma. Soporte nativo para iOS y Android con capacidades híbridas.</td>
+                                <td>
+                                    <span class="context-badge mobile">Mobile</span>
+                                    <span class="context-badge hybrid">Híbrido</span>
+                                </td>
+                                <td><span class="version-badge">v2.2.3</span></td>
+                                <td class="last-updated">28 de Enero, 2025</td>
+                                <td><a href="https://git.izertis.com/globetesting/automation/appium-framework" class="repo-link">Ver Repositorio</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="contact-section">
+                <h2>Contacto y Soporte</h2>
+                <div class="contact-info">
+                    <p>¿Tienes alguna observación, comentario o necesitas ayuda con algún framework a medida?</p>
+                    <p>No dudes en contactarnos:</p>
+                </div>
+                <a href="mailto:esantamaria@izertis.com" class="contact-email">esantamaria@izertis.com</a>
+                <div class="contact-info" style="margin-top: 20px;">
+                    <p>Nuestro equipo de automatización estará encantado de ayudarte con cualquier consulta técnica o sugerencia de mejora.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Izertis Footer -->
+    <footer class="izertis-footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <span class="logo-text">izertis</span>
+                    </div>
+                <div class="footer-section">
+                
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p style="width: 360px;">© 2025 Izertis S.A. Todos los derechos reservados.</p>
+                    </div>
             </div>
-            <a href="mailto:automation-support@company.com" class="contact-email">esantamaria@izertis.com</a>
-            <div class="contact-info" style="margin-top: 20px;">
-                <p>Nuestro equipo de soporte estará encantado de ayudarte con cualquier consulta técnica o sugerencia de mejora.</p>
-            </div>
-        </section>
-    </div>
+        </div>
+    </footer>
 
     <script>
         // Agregar interactividad a la tabla
@@ -360,6 +640,12 @@
 
         // Crear partículas periódicamente
         setInterval(createParticle, 2000);
+
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+            const nav = document.querySelector('.main-nav');
+            nav.style.display = nav.style.display === 'none' ? 'flex' : 'none';
+        });
     </script>
 </body>
 </html>
